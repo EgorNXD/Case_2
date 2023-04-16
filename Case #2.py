@@ -92,7 +92,7 @@ deal = int(input('Введите ваш годовой доход c гражда
 wage = int(input('Введите ваш годовой доход c зарплаты: '))
 
 print("Отлично, вот сколько вы должны: ")
-print(round(property*property_income + deal*deal_income + wage*wage_income + wage_income_add))
+print(round(dividend*dividend_income + property*property_income + deal*deal_income + wage*wage_income + wage_income_add))
 
 
 #debug
