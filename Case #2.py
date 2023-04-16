@@ -30,7 +30,8 @@ ans = str(input('Вы резидент РФ? (более 183 дней в РФ - 
 if ans.lower() == "да":
     res = True
 else: res = False
-ans = str(input('Полученная за год зарплата больше 5 млн? '))
+ans = str(input('Ваша заработная плата, доходы от дивидендов,'
+                ' доходы от операций с ценными бумагами суммарно составляют более 5 млн рублей? '))
 if ans.lower() == "да":
     rich = True
 else: rich = False
@@ -87,15 +88,16 @@ q2 = int(input('Введите Ваш годовой доход c выигрыш
 if q2 <= 4000:
     q2 = 0
 q3 = int(input('Введите Ваши процентные доходы по вкладам в банках: '))
-if q3 <= 4000:
-    q3 = 0
 dividend_income = int(input('Введите Ваш годовой доход по дивидентам: '))
 if property_haver == True:
     property_income = int(input('Введите Ваш годовой доход c продажи имущества: '))
 deal_income = int(input('Введите Ваш годовой доход c гражданско-правовых договоров (аренда имущества и тд): '))
 wage_income = int(input('Введите Ваш годовой доход c зарплаты: '))
 
+if wage_bid == 0.13:
+    if q3+wage_income > 5000000:
+        wage_bid = 0.15
 
 print("Отлично, вот сколько Вы должны: ")
-print(round(dividend_income*dividend_bid + property_income*property_bid + deal_income*deal_bid + wage_income*wage_bid + wage_addition + q1*0.09 + q2*0.35 + q3*0.35))
+print(round(dividend_income*dividend_bid + property_income*property_bid + deal_income*deal_bid + wage_income*wage_bid + wage_addition + q1*0.09 + q2*0.35 + q3*wage_bid))
 
