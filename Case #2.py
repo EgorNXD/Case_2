@@ -94,9 +94,6 @@ if property_haver == True:
 deal_income = int(input('Введите Ваш годовой доход c гражданско-правовых договоров (аренда имущества и тд): '))
 wage_income = int(input('Введите Ваш годовой доход c зарплаты: '))
 
-if wage_bid == 0.13:
-    if q3+wage_income > 5000000:
-        wage_bid = 0.15
 
 print("Отлично, вот сколько Вы должны: ")
 print(round(dividend_income*dividend_bid + property_income*property_bid + deal_income*deal_bid + wage_income*wage_bid + wage_addition + q1*0.09 + q2*0.35 + q3*wage_bid))
