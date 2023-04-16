@@ -15,9 +15,9 @@ dividend_income = 0
 property_income = 0
 deal_income = 0
 wage_income = 0
-q1 = 0
-q2 = 0
-q3 = 0
+old_bonds = 0
+lotteries = 0
+bank_deposit = 0
 
 name = str(input(ru.name))
 print(ru.glad, name + "!")
@@ -45,7 +45,7 @@ if not res:
     if ans.lower() == ru.yes and rich:
         wage_bid = 0.15
         wage_addition = 650000
-    elif ans.lower() == ru.yes and rich:
+    elif ans.lower() == ru.yes and not rich:
         wage_bid = 0.13
     else:
         wage_bid = 0.3
@@ -80,18 +80,19 @@ else:
             property_seller = False
 
 print(ru.lets_get_down_counting)
-q1 = int(input(ru.old_bonds))
-q2 = int(input(ru.lotteries))
-if q2 <= 4000:
-    q2 = 0
-q3 = int(input(ru.bank_deposit_inc))
+
+bank_deposit = int(input(ru.bank_deposit_inc))
 dividend_income = int(input(ru.dividents))
 if property_seller:
     property_income = int(input(ru.estate_sale_inc))
 deal_income = int(input(ru.citizens_deals_inc))
 wage_income = int(input(ru.salary))
+old_bonds = int(input(ru.old_bonds))
+lotteries = int(input(ru.lotteries))
+if lotteries <= 4000:
+    lotteries = 0
 
 print(ru.total)
 print(round(
     dividend_income*dividend_bid + property_income*property_bid + deal_income*deal_bid + wage_income*wage_bid
-    + wage_addition + q1*0.09 + q2*0.35 + q3*wage_bid))
+    + wage_addition + old_bonds*0.09 + lotteries*0.35 + bank_deposit*wage_bid))
