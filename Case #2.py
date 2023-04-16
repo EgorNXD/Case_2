@@ -3,6 +3,7 @@ Salary: Polevik Alexey =
         Elizarev Yaroslav =
         Nechaev Egor =
 """
+
 dividend_income = 0.0
 property_income = 0.0
 deal_income = 0.0
@@ -94,6 +95,7 @@ if property_haver == True:
 deal = int(input('Введите ваш годовой доход c гражданско-правовых договоров (аренда имущества и тд): '))
 wage = int(input('Введите ваш годовой доход c зарплаты: '))
 
+
 print("Отлично, вот сколько вы должны: ")
 print(round(dividend*dividend_income + property*property_income + deal*deal_income + wage*wage_income + wage_income_add))
 
@@ -105,4 +107,5 @@ property_income,
 deal_income,
 wage_income,
 wage_income_add,
-property_haver)"""
+property_haver)
+"""
