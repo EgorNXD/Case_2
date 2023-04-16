@@ -1,7 +1,7 @@
 """
 Salary: Polevik Alexey =
         Elizarev Yaroslav =
-        Nechaev Egor =
+        Nechaev Egor = 45
 """
 import russian_localizator as ru
 
