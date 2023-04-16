@@ -73,6 +73,9 @@ else:
                     ans = str(input('Вы владели жильем более 5 лет? '))
                     if ans.lower() == "нет":
                         property_income = 0.13
+            ans = str(input('У вас двое или более детей? '))
+            if ans.lower() == "да":
+                property_income = 0.0
         else: property_haver = False
 
 
